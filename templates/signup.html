@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title> 
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+    <link rel="stylesheet" href="/static/stylelogin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="title"><span>Signup Form</span></div>
+        <form action="/submit_form" method="post">
+            <div class="row">
+              <i class="fas fa-user"></i>
+              <input type="text" name="email" placeholder="your Email" required>
+            </div>
+            <div class="row">
+              <i class="fas fa-lock"></i>
+              <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="row">
+              <i class="fas fa-lock"></i>
+              <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            </div>
+            <div class="row button">
+              <input type="submit" value="Signup">
+            </div>
+            <div class="login-link">Already a member? <a href="{{ url_for('login') }}">Login now</a></div>
+          </form>
+          
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,309 @@
+* {
+    box-sizing: border-box;
+    border: 1px solid lightblue;
+  }
+  
+
+.menu {
+display: flex;
+justify-content: center;
+}
+
+.menu > div {
+width: 50%; 
+box-sizing: border-box; 
+display: flex;
+justify-content: center;
+padding: 10px;
+cursor: pointer;
+}
+
+.menu div.active {
+background-color: #6D87D6 
+}
+
+.orders_list,
+.tasks_list {
+    border-radius: 5px;
+}
+
+.orders,
+.tasks {
+    max-height: 75vh;
+    overflow-y: scroll;
+}
+
+.order, 
+.task {
+    display: flex;
+}
+
+.table_header_orders,
+.table_header_tasks {
+    display: flex;
+    width: 100%;
+}
+
+.table-header,
+.table_header {
+    padding-right: 16px;
+}
+
+.tasks_table_header {
+    padding-right: 16px;
+}
+
+.filter-placeholder {
+    font-style: italic; 
+    color: #999;
+}
+
+.order:hover, 
+.task:hover {
+    background-color: lightblue; 
+}
+
+.orderinput
+{
+    width: 80%;
+    display: flex;
+}
+
+.customerinput
+{
+    width: 20%;
+}
+
+.orderlonginputs {
+    width: 50%;
+}
+
+.ordershortinputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    width: 50%;
+}
+
+.orderlonginputs > * {
+    width: 100%;
+}
+
+.ordershortinputs > * {
+    width: 33%;
+}
+
+.add-input-container > *{
+    width: 100%;
+}
+
+.add-input-container-description {
+    width: 70%;
+}
+
+.add-input-container-description > * {
+    width: 100%;
+}
+
+.taskinput {
+    display: flex;
+    width: 100%;
+}
+
+.table_order_footer,
+.table_task_footer {
+    bottom: 0;
+    position: fixed;
+    background-color: #ffffff;
+    justify-content: center;
+    width: 98%;
+}
+
+.table_header_orders>*,
+.table_header_tasks>*{
+    margin: 3px;
+}
+
+.order>*, 
+.task>* {
+    height: 3vh;
+    white-space: nowrap; /* Предотвращаем перенос текста на новую строку */
+    overflow: hidden; /* Скрываем часть текста, которая не помещается в блок */
+    text-overflow: ellipsis;
+    align-items: center;
+    margin: 3px;
+    padding: 3px;
+}
+
+.ordercustomerinput {
+    display: flex;
+}
+
+.input-container {
+    align-items: center;
+}
+
+.input-container > * {
+    width: 100%;
+    display: block;
+}
+
+.input-container > select {
+    height: 3vh;
+}
+
+.input-container.description {
+    width: 60%;
+}
+
+.custom-input::placeholder {
+    color:black;
+  }
+
+.input-label {
+    font-size: 12px;
+    font-style: italic;
+    background-color: lightblue;
+}
+
+.add_new_order_task,
+.add_new_order,
+.add_new_task {
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6D87D6;
+}
+
+
+/* _______ */
+
+.order_id,
+.task_id {
+    width: 5%;
+}
+
+.type_of_contract {
+    display: flex;
+    justify-content: center;
+    width: 5%;
+}
+
+.departure_address,
+.destination_address {
+    width: 15%;
+}
+
+.product_common_description {
+    width: 15%;
+}
+
+.total_gross_weight,
+.total_gross_volume,
+.total_invoice_value,
+.total_cost,
+.total_revenue,
+.margin {
+    display: flex;
+    justify-content: center;
+    width: 5%;
+}
+
+.incoterms,
+.invoice_currency {
+    display: flex;
+    justify-content: center;
+    width: 10%;
+}
+
+
+.date_of_order,
+.date_of_issue,
+.order_status,
+.execution_date,
+.execition_time,
+.importance {
+    width: 15%;
+}
+
+
+
+.description {
+    width: 70%;
+}
+
+.completedtask {
+    width: 10%;
+}
+
+
+.submit_order,
+.submit_task {
+    width: 100%;
+    background-color: #6D87D6;
+    font-weight: 600;
+}
+
+.add_customer_name,
+.custom-input,
+.add-phone,
+.add-email {
+    width: 100%;
+}
+
+.customer_name,
+.contact_name,
+.phone,
+.email {
+    width: 15%;
+}
+
+
+.table_header_tasks .task_id,
+.table_header_tasks .order_id,
+.task .order_id,
+.table_header_tasks .type_of_contract,
+.task .type_of_contract,
+.table_header_tasks .departure_address,
+.task .departure_address,
+.table_header_tasks .destination_address,
+.task .destination_address,
+.table_header_tasks .margin,
+.task .margin,
+.table_header_tasks .order_status,
+.task .order_status  {
+    display: none;
+}
+
+.table_header_orders .order_id,
+.order .order_id,
+.total_gross_weight,
+.total_gross_volume,
+.incoterms,
+.total_invoice_value,
+.invoice_currency,
+.total_cost,
+.total_revenue,
+.date_of_order,
+.customer_id,
+.task_id {
+    display: none;
+}
+
+.order_description .type_of_contract,
+.order_description .total_gross_weight,
+.order_description .total_gross_volume,
+.order_description .incoterms,
+.order_description .total_invoice_value,
+.order_description .invoice_currency,
+.order_description .total_cost,
+.order_description .total_revenue,
+.order_description .margin,
+.order_description .date_of_order,
+.order_description .order_status {
+    display: block;
+}
+
