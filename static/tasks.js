@@ -90,7 +90,7 @@ function TableFilterTasks({ handleTasksFilterChange }) {
                   onChange={(event) => handleTasksFilterChange({ name: event.target.name, value: event.target.value })}
                 />
 
-<input
+                <input
                   name="phone"
                   className="phone"
                   placeholder="Filter..."
@@ -124,7 +124,7 @@ function TableFilterTasks({ handleTasksFilterChange }) {
                   <option value="shipping">shipping</option>
                   <option value="completed">completed</option>
                 </select>
-                
+
                 <select
                   name="type_of_contract"
                   className="type_of_contract"
