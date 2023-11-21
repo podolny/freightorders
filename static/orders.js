@@ -9,7 +9,7 @@ function OrdersList() {
       const ordersResponse = await axios.get('/orderslist');
       const updatedOrders = ordersResponse.data.orders_list;
       setOrders(updatedOrders);
-
+      console.log('ordersResponse - ', ordersResponse.data.tasks_list);
       const filtered = updatedOrders.filter(order =>
         filter === "" || 
         String(order[filter.name]).toLowerCase().startsWith(String(filter.value).toLowerCase())
