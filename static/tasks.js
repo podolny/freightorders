@@ -15,12 +15,13 @@ function TasksList() {
           if (dateA < dateB) { return 1; }
           return 0;
         });
+        console.log('filter - ', filter);   
         setTasks(sortedTasks);
-        console.log('tasksResponse - ', tasksResponse.data.tasks_list);
         const filteredTasks = sortedTasks.filter(task =>
           filter === "" || 
           String(task[filter.name]).toLowerCase().startsWith(String(filter.value).toLowerCase())
-        );      
+        ); 
+        console.log('filteredTasks - ', filteredTasks);     
         setFilteredTasks(filteredTasks);
       } else {
         console.error("No tasks data available for sorting.");
@@ -83,12 +84,47 @@ function TableFilterTasks({ handleTasksFilterChange }) {
                 />
 
                 <input
+                  name="contact_name"
+                  className="contact_name"
+                  placeholder="Filter..."
+                  onChange={(event) => handleTasksFilterChange({ name: event.target.name, value: event.target.value })}
+                />
+
+<input
+                  name="phone"
+                  className="phone"
+                  placeholder="Filter..."
+                  onChange={(event) => handleTasksFilterChange({ name: event.target.name, value: event.target.value })}
+                />
+
+                <input
+                  name="email"
+                  className="email"
+                  placeholder="Filter..."
+                  onChange={(event) => handleTasksFilterChange({ name: event.target.name, value: event.target.value })}
+                />
+
+                <input
                   name="order_id"
                   className="order_id"
                   placeholder="Filter..."
                   onChange={(event) => handleTasksFilterChange({ name: event.target.name, value: event.target.value })}
                 />
 
+                <div className="date_of_order">date of order</div>
+                
+                <select
+                  name="order_status"
+                  className="order_status"
+                  onChange={(event) => handleTasksFilterChange({ name: event.target.name, value: event.target.value })}
+                >
+                  <option value="" className="filter-placeholder">Filter ...</option>
+                  <option value="start">start</option>
+                  <option value="negotiation">negotiation</option>
+                  <option value="shipping">shipping</option>
+                  <option value="completed">completed</option>
+                </select>
+                
                 <select
                   name="type_of_contract"
                   className="type_of_contract"
@@ -150,41 +186,6 @@ function TableFilterTasks({ handleTasksFilterChange }) {
                   placeholder="Filter..."
                   onChange={(event) => handleTasksFilterChange({ name: event.target.name, value: event.target.value })}
                 />
-
-                <input
-                  name="contact_name"
-                  className="contact_name"
-                  placeholder="Filter..."
-                  onChange={(event) => handleTasksFilterChange({ name: event.target.name, value: event.target.value })}
-                />
-
-                <input
-                  name="phone"
-                  className="phone"
-                  placeholder="Filter..."
-                  onChange={(event) => handleTasksFilterChange({ name: event.target.name, value: event.target.value })}
-                />
-
-                <input
-                  name="email"
-                  className="email"
-                  placeholder="Filter..."
-                  onChange={(event) => handleTasksFilterChange({ name: event.target.name, value: event.target.value })}
-                />
-
-                <div className="date_of_order">date of order</div>
-
-                <select
-                  name="order_status"
-                  className="order_status"
-                  onChange={(event) => handleTasksFilterChange({ name: event.target.name, value: event.target.value })}
-                >
-                  <option value="" className="filter-placeholder">Filter ...</option>
-                  <option value="start">start</option>
-                  <option value="negotiation">negotiation</option>
-                  <option value="shipping">shipping</option>
-                  <option value="completed">completed</option>
-                </select>
 
                 <input
                   name="description"
